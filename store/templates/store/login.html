@@ -1,0 +1,22 @@
+{% extends 'store/main.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content%}
+
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <a href="{% url 'store' %}" class="btn btn-outline-dark my-3">Home</a>
+                <div class="card">
+                  <div class="card"  style="box-shadow: 3px 3px 3px dimgray;">
+                        <form method="POST" class="m-5" >
+                              {% csrf_token %}
+                              {{ form|crispy }}
+                              <input class="btn btn-outline-success m-2" type="submit" value="Login">
+                          </form>
+                          <p class="m-2">Don't have an account? <a class="btn btn-outline-secondary m-1" href="{% url 'register' %}">Register</a></p>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+{% endblock content%}   
