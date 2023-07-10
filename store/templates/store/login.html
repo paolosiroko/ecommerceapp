@@ -8,9 +8,9 @@
                 <a href="{% url 'store' %}" class="btn btn-outline-dark my-3">Home</a>
                 <div class="card">
                   <div class="card"  style="box-shadow: 3px 3px 3px dimgray;">
-                        <form method="POST" class="m-5" >
+                        <form method="POST" class="m-5" style="display: flex; flex-direction: column;"  >
                               {% csrf_token %}
-                              {{ form|crispy }}
+                             {{ form }}
                               <input class="btn btn-outline-success m-2" type="submit" value="Login">
                           </form>
                           <p class="m-2">Don't have an account? <a class="btn btn-outline-secondary m-1" href="{% url 'register' %}">Register</a></p>
